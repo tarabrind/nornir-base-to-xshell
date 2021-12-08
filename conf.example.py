@@ -1,0 +1,4 @@
+LOGINS = [
+    'ivanovaa',
+    'petrovvs',
+]
