@@ -43,16 +43,17 @@ def main():
 
                     for nr_host in nr_filtered.inventory.hosts:
                         result = jinja_template.render(
-                            host=nr_filtered.inventory.hosts[nr_host].name,
-                            port='22',
-                            protocol='SSH',
-                            username=user
+                            host=nr_filtered.inventory.hosts[nr_host].hostname,
+                            port="22",
+                            protocol="SSH",
+                            username=user,
+                            description=nr_filtered.inventory.hosts[nr_host]['old_name'],
                         )
                         os.makedirs(current_dir, exist_ok=True)
-                        filename = current_dir + "/" + nr_host + '.sxh'
-                        with open(filename, 'w', encoding='utf-16') as file:
+                        filename = current_dir + "/" + nr_host + ".xsh"
+                        with open(filename, "w", encoding="utf-16") as file:
                             file.write(result)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

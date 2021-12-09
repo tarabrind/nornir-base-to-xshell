@@ -1,4 +1,4 @@
 LOGINS = [
-    'ivanovaa',
-    'petrovvs',
+    "ivanovaa",
+    "petrovvs",
 ]
